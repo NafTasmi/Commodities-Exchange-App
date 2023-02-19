@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:untitled/src/investment/dataset.dart';
 
 class CardDesign extends StatelessWidget {
@@ -19,19 +18,6 @@ class CardDesign extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(20))),
         child: Stack(
           children: [
-            // Positioned(
-            //     bottom: -50,
-            //     child: Blob.random(size: 150,styles: BlobStyles(color: card.color.withGreen(1).withOpacity(0.2)),)
-            // ),
-            // Positioned(
-            //     top: -50,
-            //     child: Blob.random(size: 250,styles: BlobStyles(color: card.color.withGreen(1).withOpacity(0.2)),)
-            // ),
-            // Positioned(
-            //     top: -50,
-            //     right: -50,
-            //     child: Blob.random(size: 300,styles: BlobStyles(color: card.color.withGreen(1).withOpacity(0.2)),)
-            // ),
             Positioned(
               top: 30,
               left: 30,

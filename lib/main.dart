@@ -1,9 +1,6 @@
-/*
-not fulfilled yet
- */
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled/src/app/app.dart';
 import 'package:untitled/src/investment/investmentPage.dart';
 import 'package:untitled/src/mongodb/connection/mongodb.dart';
 import 'package:untitled/src/navigationbar/home.dart';
@@ -17,18 +14,30 @@ import 'package:untitled/src/login/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'src/firebase/firebase_options.dart';
 import 'src/dashboard/dashboard.dart';
+import 'package:untitled/src/investment/investmentPage.dart';
+import 'package:untitled/src/developers/badrul.dart';
+import 'package:untitled/src/developers/munni.dart';
+import 'package:untitled/src/developers/nafisa.dart';
+import 'package:untitled/src/developers/developers.dart';
+import 'package:untitled/src/supervisor/supervisor.dart';
+import 'package:untitled/src/supervisor/rumel.dart';
+import 'package:untitled/src/supervisor/dipta.dart';
+import 'package:untitled/src/app/app.dart';
+import 'package:untitled/src/license/license.dart';
 
-//12121
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  print("Firebase Initiated");
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
+
   );
+  print("Firebase Initiated");
 
   WidgetsFlutterBinding.ensureInitialized();
-  print("Mongodb Initiated");
+
   await MongoDatabase.connect();
+  print("Mongodb Initiated");
 
   runApp(const MyApp());
 }
@@ -43,8 +52,10 @@ class MyApp extends StatelessWidget {
         '/Login': (context) => const Login(),
         '/Signup': (context) => const Signup(),
         '/Dashboard': (context) => const Dashboard(),
+        '/Investment': (context) => const InvestmentPage(),
+      //  '/License': (context) => const LicensePage(),
       },
-      home: const Splashscreen(),
+      home: const Badrul(),
 
       //const Dashboard(value: "value"),
       debugShowCheckedModeBanner: false,

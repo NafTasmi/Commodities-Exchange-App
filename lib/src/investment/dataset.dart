@@ -16,14 +16,14 @@ List<CardData> cards = [
       date: '12/26',
       number:'5262',
       color: Colors.blue,
-      image: "assets/mastercard.png"
+      image: "assets/mastercard.png",
   ),
   CardData(
       balance: '48,632',
       date: '01/23',
       number:'5737',
       color: Colors.red,
-      image: "assets/mastercard.png"
+      image: "assets/mastercard.png",
 
   ),
   CardData(
@@ -31,7 +31,7 @@ List<CardData> cards = [
       date: '07/24',
       number:'6315',
       color: Colors.green,
-      image: "assets/mastercard.png"
+      image: "assets/mastercard.png",
 
   )
 ];
@@ -45,7 +45,7 @@ class LastInvestmentData{
 List<LastInvestmentData> lastInvestment=[
   LastInvestmentData(value: 33624,name: "Twitter, Inc. ao"),
   LastInvestmentData(value: 23864, name: "Tesla, Inc. ao"),
-  LastInvestmentData(value: 20724, name: "Volkswagon, Inc.ao")
+  LastInvestmentData(value: 20724, name: "Volkswagon, Inc.ao"),
 ];
 
 class Recommended{
