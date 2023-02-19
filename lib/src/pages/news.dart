@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/src/mongodb/connection/mongodb.dart';
@@ -16,19 +18,19 @@ class _MongoDBNewsPageState extends State<MongoDBNewsPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
           title: Text(
             "News",
             style: GoogleFonts.poppins(
               textStyle: const TextStyle(
-                color: const Color(0xFF126172),
+                color: Color(0xFF126172),
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
       ),
       body: SafeArea(
@@ -36,13 +38,13 @@ class _MongoDBNewsPageState extends State<MongoDBNewsPage> {
           future: MongoDatabase.getNews(),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else {
               if (snapshot.hasData) {
                 var totalData = snapshot.data.length;
-                print("Total Data: " + totalData.toString());
+                print("Total Data: $totalData");
                 return ListView.builder(
                     itemCount: totalData,
                     itemBuilder: (context, index) {
@@ -50,7 +52,7 @@ class _MongoDBNewsPageState extends State<MongoDBNewsPage> {
                           MongoDbModel.fromJson(snapshot.data[index]));
                     });
               } else {
-                return Text("No Data Found");
+                return const Text("No Data Found");
               }
             }
           },
@@ -66,7 +68,7 @@ Widget displaycard(MongoDbModel data) {
     //color: Color.fromARGB(255, 158, 162, 158),
     shape: RoundedRectangleBorder(
         borderRadius:
-            BorderRadius.circular(30).copyWith(topRight: Radius.circular(0))),
+            BorderRadius.circular(30).copyWith(topRight: const Radius.circular(0))),
     shadowColor: const Color(0xFF126172),
     elevation: 10,
     // ignore: sort_child_properties_last
@@ -78,10 +80,10 @@ Widget displaycard(MongoDbModel data) {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [const Color(0xFF3FBFA0), Color(0xFF126172)],
+          colors: const [Color(0xFF3FBFA0), Color(0xFF126172)],
         ),
         borderRadius:
-            BorderRadius.circular(30).copyWith(topRight: Radius.circular(0)),
+            BorderRadius.circular(30).copyWith(topRight: const Radius.circular(0)),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -89,7 +91,7 @@ Widget displaycard(MongoDbModel data) {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              '${data.newsTitle}',
+              data.newsTitle,
               //textAlign: TextAlign.justify,
               style: GoogleFonts.poppins(
                 fontSize: 16.0,
@@ -112,7 +114,7 @@ Widget displaycard(MongoDbModel data) {
           Align(
             alignment: Alignment.topLeft,
             child: Text(
-              '${data.news}',
+              data.news,
               textAlign: TextAlign.justify,
               style: GoogleFonts.poppins(
                 fontSize: 14.0,
@@ -123,6 +125,6 @@ Widget displaycard(MongoDbModel data) {
         ],
       ),
     ),
-    margin: EdgeInsets.all(10),
+    margin: const EdgeInsets.all(10),
   );
 }

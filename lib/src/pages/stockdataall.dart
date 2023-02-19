@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/src/mongodb/connection/mongodb.dart';
-import '../mongodb/news/mogodbmodelnews.dart';
 import '../mongodb/stockData/Mongodbstocks.dart';
 
 class MongoDBStockDataPage extends StatefulWidget {
@@ -16,19 +15,19 @@ class _MongoDBStockDataPageState extends State<MongoDBStockDataPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
           title: Text(
             "All Stock Data",
             style: GoogleFonts.poppins(
               textStyle: const TextStyle(
-                color: const Color(0xFF126172),
+                color: Color(0xFF126172),
                 fontSize: 22,
                 fontWeight: FontWeight.w700,
               ),
             ),
           ),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         ),
       ),
       body: SafeArea(
@@ -36,13 +35,13 @@ class _MongoDBStockDataPageState extends State<MongoDBStockDataPage> {
           future: MongoDatabase.getStockData(),
           builder: (context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else {
               if (snapshot.hasData) {
                 var totalData = snapshot.data.length;
-                print("Total Data: " + totalData.toString());
+                print("Total Data: $totalData");
                 return ListView.builder(
                     itemCount: totalData,
                     itemBuilder: (context, index) {
@@ -50,7 +49,7 @@ class _MongoDBStockDataPageState extends State<MongoDBStockDataPage> {
                           MongoDbStocks.fromJson(snapshot.data[index]));
                     });
               } else {
-                return Text("No Data Found");
+                return const Text("No Data Found");
               }
             }
           },
@@ -63,12 +62,12 @@ class _MongoDBStockDataPageState extends State<MongoDBStockDataPage> {
 Widget displaycard(MongoDbStocks data) {
   getColor() {
     if (data.change == '--') {
-      return Color.fromARGB(255, 167, 166, 166);
+      return const Color.fromARGB(255, 167, 166, 166);
     }
     if (data.change.contains('-')) {
-      return Color.fromARGB(255, 252, 126, 126);
+      return const Color.fromARGB(255, 252, 126, 126);
     } else {
-      return Color(0xFFA4FCBA);
+      return const Color(0xFFA4FCBA);
     }
   }
 
@@ -76,7 +75,7 @@ Widget displaycard(MongoDbStocks data) {
     color: getColor(),
     shape: RoundedRectangleBorder(
         borderRadius:
-            BorderRadius.circular(30).copyWith(topRight: Radius.circular(0))),
+            BorderRadius.circular(30).copyWith(topRight: const Radius.circular(0))),
     shadowColor: const Color(0xFF126172),
     elevation: 10,
     // ignore: sort_child_properties_last
@@ -101,7 +100,7 @@ Widget displaycard(MongoDbStocks data) {
           Align(
             alignment: Alignment.topCenter,
             child: Text(
-              '${data.tradingCode}',
+              data.tradingCode,
               //textAlign: TextAlign.justify,
               style: GoogleFonts.poppins(
                 fontSize: 16.0,
@@ -156,6 +155,6 @@ Widget displaycard(MongoDbStocks data) {
         ],
       ),
     ),
-    margin: EdgeInsets.all(10),
+    margin: const EdgeInsets.all(10),
   );
 }

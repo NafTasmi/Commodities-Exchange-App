@@ -9,15 +9,15 @@ class Dipta extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           reverse: true,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
-            children: [
+            children: const [
               Image(
                 image: AssetImage('assets/images/DCP.jpeg'),
                 height: 160,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 120,left: 25,right: 25),
+                padding: EdgeInsets.only(top: 120,left: 25,right: 25),
                 child: Text(
                   'Dipta Chandra Paul'
                       '',
@@ -32,8 +32,8 @@ class Dipta extends StatelessWidget {
               ),
               SizedBox(
                   height: 40),
-              Padding(padding: const EdgeInsets.only(left: 20,right: 20),
-                child:const Text(
+              Padding(padding: EdgeInsets.only(left: 20,right: 20),
+                child:Text(
 
                   'M U N N I  F A R H A N A  A K T E R\n'
                       '',

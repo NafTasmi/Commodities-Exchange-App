@@ -7,6 +7,8 @@ class LineChartWidget extends StatelessWidget {
     const Color(0xff02d39a),
   ];
 
+  LineChartWidget({super.key});
+
   @override
   Widget build(BuildContext context) => LineChart(
     
@@ -23,7 +25,7 @@ class LineChartWidget extends StatelessWidget {
           borderData: FlBorderData(
             show: false,
             border:
-                Border.all(color: Color.fromARGB(255, 81, 32, 32), width: 5),
+                Border.all(color: const Color.fromARGB(255, 81, 32, 32), width: 5),
           ),
           titlesData: FlTitlesData(
             show: false,
@@ -33,22 +35,22 @@ class LineChartWidget extends StatelessWidget {
           lineBarsData: [
             LineChartBarData(
               spots: [
-                FlSpot(0, 3),
-                FlSpot(2.6, 10),
-                FlSpot(4.9, 5),
-                FlSpot(6.8, 3.1),
-                FlSpot(8, 8),
-                FlSpot(9.5, 3),
-                FlSpot(11, 9),
+                const FlSpot(0, 3),
+                const FlSpot(2.6, 10),
+                const FlSpot(4.9, 5),
+                const FlSpot(6.8, 3.1),
+                const FlSpot(8, 8),
+                const FlSpot(9.5, 3),
+                const FlSpot(11, 9),
               ],
               dotData: FlDotData(
                 show: false,
               ),
               isCurved: true,
-              color: Color(0xFFA4FCBA),
+              color: const Color(0xFFA4FCBA),
               belowBarData: BarAreaData(
                 show: true,
-                color: Color(0xFFA4FCBA),
+                color: const Color(0xFFA4FCBA),
               ),
             ),
           ],

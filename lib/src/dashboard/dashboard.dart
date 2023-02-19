@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import firebase auth
@@ -23,14 +22,14 @@ class _DashboardState extends State<Dashboard> {
           elevation: 0,
           actions: [
             PopupMenuButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.menu,
                 color: Colors.black,
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)
-                      .copyWith(topRight: Radius.circular(0))),
-              padding: EdgeInsets.all(10),
+                      .copyWith(topRight: const Radius.circular(0))),
+              padding: const EdgeInsets.all(10),
               elevation: 10,
               color: Colors.grey.shade100,
               //color: Colors.white,
@@ -40,7 +39,7 @@ class _DashboardState extends State<Dashboard> {
                   child: Column(
                     children: [
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.developer_board, color: Color(0xFF126172)),
                           SizedBox(width: 10),
                           Text(''),
@@ -49,9 +48,9 @@ class _DashboardState extends State<Dashboard> {
                     ],
                   ),
                 ),
-                PopupMenuItem(
-                  child: Text(''),
+                const PopupMenuItem(
                   value: 2,
+                  child: Text(''),
                 ),
               ],
               onSelected: (value) {
@@ -61,25 +60,23 @@ class _DashboardState extends State<Dashboard> {
             ),
           ],
         ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              Text(
-                "Hi,",
-                style: GoogleFonts.poppins(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700,
-                ),
+        body: Column(
+          children: <Widget>[
+            Text(
+              "Hi,",
+              style: GoogleFonts.poppins(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700,
               ),
-              Text(
-                FirebaseAuth.instance.currentUser!.displayName.toString(),
-                style: GoogleFonts.poppins(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.w700,
-                ),
+            ),
+            Text(
+              FirebaseAuth.instance.currentUser!.displayName.toString(),
+              style: GoogleFonts.poppins(
+                fontSize: 30.0,
+                fontWeight: FontWeight.w700,
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -27,17 +27,17 @@ class _SignupState extends State<Signup> {
         body: Center(
           child: SingleChildScrollView(
             reverse: true,
-            padding: EdgeInsets.all(32),
+            padding: const EdgeInsets.all(32),
             child: Column(
               children: [
-                if (!isKeyboard) SizedBox(height: 60),
+                if (!isKeyboard) const SizedBox(height: 60),
                 if (!isKeyboard)
-                  Image(
+                  const Image(
                     image: AssetImage('assets/images/DSE_logo.png'),
                     height: 169,
                   ),
-                if (!isKeyboard) SizedBox(height: 10),
-                if (isKeyboard) SizedBox(height: 40),
+                if (!isKeyboard) const SizedBox(height: 10),
+                if (isKeyboard) const SizedBox(height: 40),
                 if (!isKeyboard)
                   Text(
                     'Commodities Exchange ',
@@ -46,7 +46,7 @@ class _SignupState extends State<Signup> {
                       fontWeight: FontWeight.w700,
                     ),
                   ),
-                if (!isKeyboard) SizedBox(height: 10),
+                if (!isKeyboard) const SizedBox(height: 10),
                 if (!isKeyboard)
                   Text(
                     'Create an account',
@@ -56,11 +56,11 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 10),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(25),
@@ -76,7 +76,7 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.person,
                       ),
                       //icon color change on focus
@@ -85,11 +85,11 @@ class _SignupState extends State<Signup> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(0),
@@ -104,16 +104,16 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.email),
+                      icon: const Icon(Icons.email),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                   ),
                   child: TextField(
@@ -125,16 +125,16 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.phone),
+                      icon: const Icon(Icons.phone),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(0),
@@ -151,17 +151,17 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.lock),
+                      icon: const Icon(Icons.lock),
                     ),
                   ),
                 ),
                 //confirm password field with dynamic icon
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(0),
@@ -178,16 +178,16 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.password),
+                      icon: const Icon(Icons.password),
                     ),
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(0),
@@ -203,18 +203,18 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.credit_card_rounded),
+                      icon: const Icon(Icons.credit_card_rounded),
                       //focus color
                     ),
                   ),
                 ),
                 //Tax Return ID field with dynamic icon
                 Container(
-                  margin: EdgeInsets.only(top: 1),
-                  padding: EdgeInsets.only(left: 20),
+                  margin: const EdgeInsets.only(top: 1),
+                  padding: const EdgeInsets.only(left: 20),
                   width: 325,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFFE1E1E1),
                     borderRadius: BorderRadius.only(
                       bottomRight: Radius.circular(25),
@@ -230,13 +230,13 @@ class _SignupState extends State<Signup> {
                         fontSize: 16.0,
                         fontWeight: FontWeight.w500,
                       ),
-                      icon: Icon(Icons.document_scanner),
+                      icon: const Icon(Icons.document_scanner),
                     ),
                   ),
                 ),
                 //check the box to agree our terms and conditions
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 10),
                   child: Row(
                     children: [
                       Checkbox(
@@ -255,10 +255,10 @@ class _SignupState extends State<Signup> {
                 ),
                 //sign up button
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 10),
                   width: 235,
                   height: 50,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Color(0xFF126172),
                     borderRadius: BorderRadius.only(
                       topRight: Radius.circular(30),
@@ -268,11 +268,15 @@ class _SignupState extends State<Signup> {
                     ),
                   ),
                   child: TextButton(
-                    onPressed: () async {
-                      await signup();
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => Login()),
+                    onPressed: () {
+                      signup().then(
+                        (value) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Login()),
+                          );
+                        },
                       );
                     },
                     child: Text(
@@ -299,7 +303,7 @@ class _SignupState extends State<Signup> {
         .createUserWithEmailAndPassword(
             email: emailController.text, password: passwordController.text)
         .then((value) {
-          firebaseauth.currentUser!.updateDisplayName(nameController.text);
+      firebaseauth.currentUser!.updateDisplayName(nameController.text);
       final firestoreInstance = FirebaseFirestore.instance;
       firestoreInstance
           .collection("Users")

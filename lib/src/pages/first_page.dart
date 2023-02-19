@@ -19,15 +19,14 @@ class _SplashscreenState extends State<Splashscreen> {
           elevation: 0,
           actions: [
             PopupMenuButton(
-              icon: Icon(
+              icon: const Icon(
                 Icons.menu,
                 color: Colors.black,
               ),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20)
-                      .copyWith(topRight: Radius.circular(0))
-              ),
-              padding: EdgeInsets.all(10),
+                      .copyWith(topRight: const Radius.circular(0))),
+              padding: const EdgeInsets.all(10),
               elevation: 10,
               color: Colors.grey.shade100,
               //color: Colors.white,
@@ -37,33 +36,30 @@ class _SplashscreenState extends State<Splashscreen> {
                   child: Column(
                     children: [
                       Row(
-                        children: [
+                        children: const [
                           Icon(Icons.developer_board, color: Color(0xFF126172)),
                           SizedBox(width: 10),
-                          Text('About Developers'
-                          ),
+                          Text('About Developers'),
                         ],
                       ),
                     ],
                   ),
                 ),
-
-                PopupMenuItem(
+                const PopupMenuItem(
+                  value: 2,
                   child: Text('About App'),
-                  value: 2,
                 ),
-                PopupMenuItem(
-                  child: Text('Feedback'
-                  ),
+                const PopupMenuItem(
                   value: 2,
+                  child: Text('Feedback'),
                 ),
-                PopupMenuItem(
+                const PopupMenuItem(
+                  value: 2,
                   child: Text('Licences'),
-                  value: 2,
                 ),
-                PopupMenuItem(
-                  child: Text('Exit'),
+                const PopupMenuItem(
                   value: 2,
+                  child: Text('Exit'),
                 ),
               ],
               onSelected: (value) {
@@ -79,12 +75,12 @@ class _SplashscreenState extends State<Splashscreen> {
         body: Center(
           child: Column(
             children: <Widget>[
-              SizedBox(height: 20),
-              Image(
+              const SizedBox(height: 20),
+              const Image(
                 image: AssetImage('assets/images/DSE_logo.png'),
                 height: 169,
               ),
-              SizedBox(height: 47),
+              const SizedBox(height: 47),
               Text(
                 'Commodities Exchange ',
                 style: GoogleFonts.poppins(
@@ -92,7 +88,7 @@ class _SplashscreenState extends State<Splashscreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: 78),
+              const SizedBox(height: 78),
               Text(
                 'Feel the new experience of Stock',
                 style: GoogleFonts.poppins(
@@ -107,16 +103,22 @@ class _SplashscreenState extends State<Splashscreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              SizedBox(height: 120),
+              const SizedBox(height: 120),
               ButtonBar(
                 alignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ElevatedButton(
                     onPressed: () {
-                      primary:
-                      Colors.white;
                       Navigator.pushNamed(context, '/Login');
                     },
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size(236, 39),
+                      backgroundColor: const Color(0xFF126172),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                      ),
+                    ),
                     child: Text(
                       'Login',
                       style: GoogleFonts.poppins(
@@ -124,23 +126,13 @@ class _SplashscreenState extends State<Splashscreen> {
                         fontWeight: FontWeight.w700,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                      minimumSize: Size(236, 39),
-                      backgroundColor: Color(0xFF126172),
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
                   ),
                 ],
               ),
               Container(
-                margin: EdgeInsets.only(top: 0),
+                margin: const EdgeInsets.only(top: 0),
                 child: TextButton(
                   onPressed: () {
-                    primary:
-                    Colors.white;
                     Navigator.pushNamed(context, '/Signup');
                   },
                   child: Text(
@@ -148,7 +140,7 @@ class _SplashscreenState extends State<Splashscreen> {
                     style: GoogleFonts.poppins(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w700,
-                      color: Color(0xFF126172),
+                      color: const Color(0xFF126172),
                     ),
                   ),
                 ),
@@ -161,10 +153,3 @@ class _SplashscreenState extends State<Splashscreen> {
     );
   }
 }
-
-
-
-
-
-
-

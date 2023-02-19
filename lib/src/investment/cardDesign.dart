@@ -3,26 +3,26 @@ import 'package:untitled/src/investment/dataset.dart';
 
 class CardDesign extends StatelessWidget {
   final CardData card;
-  CardDesign({required this.card});
+  const CardDesign({super.key, required this.card});
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        margin: EdgeInsets.all(5),
+        margin: const EdgeInsets.all(5),
         decoration: BoxDecoration(
             color: card.color,
             boxShadow: [
               BoxShadow(
-                  color: card.color, offset: Offset(0, 0), blurRadius: 5)
+                  color: card.color, offset: const Offset(0, 0), blurRadius: 5)
             ],
-            borderRadius: BorderRadius.all(Radius.circular(20))),
+            borderRadius: const BorderRadius.all(Radius.circular(20))),
         child: Stack(
           children: [
             Positioned(
               top: 30,
               left: 30,
               right: 30,
-              child: Container(
+              child: SizedBox(
                 width: 350,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,24 +30,24 @@ class CardDesign extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "Current Balance",
                           style: TextStyle(color: Colors.white54),
                         ),
                         Text(
                           card.date,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white, fontWeight: FontWeight.w700),
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
-                      "\$" + card.balance,
+                      "\$${card.balance}",
                       textAlign: TextAlign.start,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 30,
                           fontWeight: FontWeight.bold),
@@ -64,8 +64,8 @@ class CardDesign extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "****" + card.number,
-                    style: TextStyle(color: Colors.white,fontSize: 18),
+                    "****${card.number}",
+                    style: const TextStyle(color: Colors.white,fontSize: 18),
                   ),
                   Image(
                     image: AssetImage(card.image),

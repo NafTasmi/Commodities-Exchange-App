@@ -55,20 +55,20 @@ class RatingUs extends StatelessWidget {
 
 
               child: ElevatedButton(
-                onPressed: (){}, // onPressed
-                child: Text('Rate',
-                  style: TextStyle(
-                      fontSize: 20,
-                    color: Colors.green,
-                  ),
-                ),
+                onPressed: (){},
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     onPrimary: Colors.green,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
+                  ), // onPressed
+                child: const Text('Rate',
+                  style: TextStyle(
+                      fontSize: 20,
+                    color: Colors.green,
                   ),
+                ),
                 ), // child
             ),
           ], // children

@@ -1,19 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/src/investment/investmentPage.dart';
-import 'package:untitled/src/mongodb/connection/mongodb.dart';
 import 'package:untitled/src/pages/homescreen.dart';
 import 'package:untitled/src/pages/news.dart';
 import 'package:untitled/src/pages/stockdataall.dart';
-import 'package:untitled/src/widgets/linechart_1/home.dart';
-import 'package:untitled/src/pages/first_page.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:untitled/src/login/login_page.dart';
 import 'package:untitled/src/login/signup.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:untitled/src/investment/investmentPage.dart';
 
 
 class Home extends StatefulWidget {
@@ -51,7 +43,7 @@ class _HomeState extends State<Home> {
             onTap: (index) {
               setState(() {
                 currentIndex = index;
-                print("Bottom Navigation Index: ${index} Pressed");
+                print("Bottom Navigation Index: $index Pressed");
               });
             },
             selectedItemColor: Colors.white,

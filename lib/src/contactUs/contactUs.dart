@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:untitled/src/dashboard/dashboard.dart';
 
 class ContactUs extends StatefulWidget {
   const ContactUs({super.key});
@@ -17,7 +12,7 @@ class _ContactUsState extends State<ContactUs> {
   bool isLoading = false;
   final nameController = TextEditingController(),
       emailController = TextEditingController();
-      //myController = TextEditingController();
+  //myController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
@@ -28,16 +23,16 @@ class _ContactUsState extends State<ContactUs> {
           body: Center(
             child: SingleChildScrollView(
               reverse: true,
-              padding: EdgeInsets.all(32),
+              padding: const EdgeInsets.all(32),
               child: Column(
                 children: [
                   // SizedBox(height: 60),
                   if (!isKeyboard)
-                    Image(
+                    const Image(
                       image: AssetImage('assets/images/DSE_logo.png'),
                       height: 169,
                     ),
-                  SizedBox(height: 47),
+                  const SizedBox(height: 47),
                   Text(
                     ' Contact Us ',
                     style: GoogleFonts.poppins(
@@ -46,11 +41,11 @@ class _ContactUsState extends State<ContactUs> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 10),
-                    padding: EdgeInsets.only(left: 20),
+                    margin: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(left: 20),
                     width: 325,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFE1E1E1),
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(25),
@@ -66,7 +61,7 @@ class _ContactUsState extends State<ContactUs> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
                         ),
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.person,
                         ),
                         //icon color change on focus
@@ -77,11 +72,11 @@ class _ContactUsState extends State<ContactUs> {
 
                   //email text field
                   Container(
-                    margin: EdgeInsets.only(top: 1),
-                    padding: EdgeInsets.only(left: 20),
+                    margin: const EdgeInsets.only(top: 1),
+                    padding: const EdgeInsets.only(left: 20),
                     width: 325,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xFFE1E1E1),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(0),
@@ -96,12 +91,12 @@ class _ContactUsState extends State<ContactUs> {
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500,
                         ),
-                        icon: Icon(Icons.email),
+                        icon: const Icon(Icons.email),
                       ),
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 20),
+                    margin: const EdgeInsets.only(top: 20),
                     width: 120,
                     height: 50,
                     child: ElevatedButton(
@@ -110,8 +105,8 @@ class _ContactUsState extends State<ContactUs> {
                           isLoading = true;
                         });
                         Future.delayed(
-                          Duration(seconds: 2),
-                              () {
+                          const Duration(seconds: 2),
+                          () {
                             setState(() {
                               isLoading = false;
                             });
@@ -120,28 +115,28 @@ class _ContactUsState extends State<ContactUs> {
                         //await contact();
                         print("emailController.text");
                       },
-                      child: isLoading
-                          ? SizedBox(
-                          width: 20,
-                          height: 20,
-                          child: CircularProgressIndicator(
-                              color: Colors.white, strokeWidth: 3))
-                          : Text(
-                        'Contact Us',
-                        style: GoogleFonts.poppins(
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
 
                       //bb
                       style: ElevatedButton.styleFrom(
                         primary: Colors.green,
-                        backgroundColor: Color(0xFF126172),
+                        backgroundColor: const Color(0xFF126172),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
+                      child: isLoading
+                          ? const SizedBox(
+                              width: 20,
+                              height: 20,
+                              child: CircularProgressIndicator(
+                                  color: Colors.white, strokeWidth: 3))
+                          : Text(
+                              'Contact Us',
+                              style: GoogleFonts.poppins(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
                     ),
                   ),
                 ],
@@ -151,4 +146,3 @@ class _ContactUsState extends State<ContactUs> {
         ));
   }
 }
-
