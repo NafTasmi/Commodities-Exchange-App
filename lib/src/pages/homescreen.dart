@@ -1,12 +1,8 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:untitled/src/mongodb/connection/mongodb.dart';
 import 'package:untitled/src/mongodb/stockData/Mongodbstocks.dart';
-import 'package:untitled/src/mongodb/topgainer/topgainer.dart';
-import 'package:untitled/src/pages/news.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -76,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       alignment: const AlignmentDirectional(-0.72, 0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0, 1, 75, 0),
+                            const EdgeInsetsDirectional.fromSTEB(0, 1, 50, 0),
                         child: Text(
                           '6508.00',
                           style: GoogleFonts.poppins(
@@ -187,13 +183,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (context, AsyncSnapshot snapshot) {
                           if (snapshot.connectionState ==
                               ConnectionState.waiting) {
-                            return Center(
+                            return const Center(
                               child: CircularProgressIndicator(),
                             );
                           } else {
                             if (snapshot.hasData) {
                               var totalData = snapshot.data.length;
-                              print("Total Data: " + totalData.toString());
+                              print("Total Data: $totalData");
                               return ListView.builder(
                                   itemCount: totalData,
                                   itemBuilder: (context, index) {
@@ -201,7 +197,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                         snapshot.data[index]));
                                   });
                             } else {
-                              return Text("No Data Found");
+                              return const Text("No Data Found");
                             }
                           }
                         },
@@ -290,12 +286,12 @@ class _HomeScreenState extends State<HomeScreen> {
 Widget displaycard(MongoDbStocks data) {
   getColor() {
     if (data.change == '--') {
-      return Color.fromARGB(255, 167, 166, 166);
+      return const Color.fromARGB(255, 167, 166, 166);
     }
     if (data.change.contains('-')) {
-      return Color.fromARGB(255, 252, 126, 126);
+      return const Color.fromARGB(255, 252, 126, 126);
     } else {
-      return Color(0xFFA4FCBA);
+      return const Color(0xFFA4FCBA);
     }
   }
 
@@ -326,7 +322,7 @@ Widget displaycard(MongoDbStocks data) {
           Align(
             alignment: Alignment.topCenter,
             child: Text(
-              '${data.tradingCode}',
+              data.tradingCode,
               //textAlign: TextAlign.justify,
               style: GoogleFonts.poppins(
                 fontSize: 16.0,
@@ -381,6 +377,6 @@ Widget displaycard(MongoDbStocks data) {
         ],
       ),
     ),
-    margin: EdgeInsets.all(10),
+    margin: const EdgeInsets.all(10),
   );
 }
