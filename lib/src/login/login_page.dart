@@ -1,10 +1,8 @@
+// ignore_for_file: avoid_print, deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:untitled/src/dashboard/dashboard.dart';
 import 'package:untitled/src/navigationbar/home.dart';
 
 class Login extends StatefulWidget {
@@ -28,16 +26,16 @@ class _LoginState extends State<Login> {
           body: Center(
             child: SingleChildScrollView(
               reverse: true,
-              padding: EdgeInsets.all(32),
+              padding: const EdgeInsets.all(32),
               child: Column(
                 children: [
                   // SizedBox(height: 60),
                   if (!isKeyboard)
-                    Image(
+                    const Image(
                       image: AssetImage('assets/images/DSE_logo.png'),
                       height: 169,
                     ),
-                  SizedBox(height: 47),
+                  const SizedBox(height: 47),
                   Text(
                     'Commodities Exchange ',
                     style: GoogleFonts.poppins(
@@ -46,11 +44,11 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(top: 50),
-                    padding: EdgeInsets.only(left: 20),
+                    margin: const EdgeInsets.only(top: 50),
+                    padding: const EdgeInsets.only(left: 20),
                     width: 300,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       //background color of box
                       //upper corner rounded lower corner not rounded
@@ -61,7 +59,7 @@ class _LoginState extends State<Login> {
                     ),
                     child: TextField(
                       controller: emailController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Email',
                         icon: Icon(Icons.email),
@@ -71,11 +69,11 @@ class _LoginState extends State<Login> {
 
                   //password field with rounded corner with icon
                   Container(
-                    margin: EdgeInsets.only(top: 2),
-                    padding: EdgeInsets.only(left: 20),
+                    margin: const EdgeInsets.only(top: 2),
+                    padding: const EdgeInsets.only(left: 20),
                     width: 300,
                     height: 50,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(15),
@@ -85,7 +83,7 @@ class _LoginState extends State<Login> {
                     child: TextField(
                       controller: passwordController,
                       obscureText: true,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         border: InputBorder.none,
                         hintText: 'Password',
                         icon: Icon(Icons.lock),
@@ -95,7 +93,7 @@ class _LoginState extends State<Login> {
                   ),
                   //elevated login button green color
                   Container(
-                    margin: EdgeInsets.only(top: 20),
+                    margin: const EdgeInsets.only(top: 20),
                     width: 100,
                     height: 50,
                     child: ElevatedButton(
@@ -104,7 +102,7 @@ class _LoginState extends State<Login> {
                           isLoading = true;
                         });
                         Future.delayed(
-                          Duration(seconds: 2),
+                          const Duration(seconds: 2),
                           () {
                             setState(() {
                               isLoading = false;
@@ -114,8 +112,18 @@ class _LoginState extends State<Login> {
                         await login();
                         print("emailController.text");
                       },
+
+                      //bb
+
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
+                        backgroundColor: const Color(0xFF126172),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
                       child: isLoading
-                          ? SizedBox(
+                          ? const SizedBox(
                               width: 20,
                               height: 20,
                               child: CircularProgressIndicator(
@@ -127,16 +135,6 @@ class _LoginState extends State<Login> {
                                 fontWeight: FontWeight.w700,
                               ),
                             ),
-
-                      //bb
-
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.green,
-                        backgroundColor: Color(0xFF126172),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
                     ),
                   ),
                   //elevated login button green color
@@ -144,7 +142,7 @@ class _LoginState extends State<Login> {
                   //forgot password
                   if (!isKeyboard)
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: const EdgeInsets.only(top: 20),
                       child: TextButton(
                         onPressed: () {},
                         child: Text(
@@ -170,7 +168,7 @@ class _LoginState extends State<Login> {
         .signInWithEmailAndPassword(
             email: emailController.text, password: passwordController.text)
         .then((value) => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Home())))
+            .push(MaterialPageRoute(builder: (context) => const Home())))
 
         // Navigator.pushNamed(context, '/signup'))
         .catchError((e) => print(e));

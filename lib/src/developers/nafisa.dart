@@ -9,15 +9,15 @@ class Nafisa extends StatelessWidget {
       body: Center(
         child: SingleChildScrollView(
           reverse: true,
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
-            children: [
+            children: const [
               Image(
                 image: AssetImage('assets/images/naf.jpeg'),
                 height: 160,
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 120,left: 25,right: 25),
+                padding: EdgeInsets.only(top: 120,left: 25,right: 25),
                 child: Text(
                   'Nafisa Tasmiya'
                       '',
@@ -32,8 +32,8 @@ class Nafisa extends StatelessWidget {
               ),
               SizedBox(
                   height: 40),
-              Padding(padding: const EdgeInsets.only(left: 20,right: 20),
-                child:const Text(
+              Padding(padding: EdgeInsets.only(left: 20,right: 20),
+                child:Text(
 
                   'I am incredibly interested in creating new websites and apps as a computer science and engineering student. In addition, I enjoy learning various technology words because I am interested in them. Also, I have extensive knowledge of HTML, CSS, Bootstrap, JavaScript, C, C++, Java, and Python.\n\nI am also skilled at managing and improving communication skills.I am incredibly interested in creating new websites and apps as a computer science and engineering student. In addition, I enjoy learning various technology words because I am interested in them.\n\nI am also skilled at managing and improving communication skills.'
                       '',
