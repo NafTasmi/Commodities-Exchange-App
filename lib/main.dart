@@ -6,6 +6,7 @@ import 'package:untitled/src/mongodb/connection/mongodb.dart';
 import 'package:untitled/src/navigationbar/home.dart';
 import 'package:untitled/src/pages/homescreen.dart';
 import 'package:untitled/src/pages/news.dart';
+import 'package:untitled/src/ratingPage/ratingUs.dart';
 import 'package:untitled/src/widgets/linechart_1/home.dart';
 import 'package:untitled/src/pages/first_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,9 +54,8 @@ class MyApp extends StatelessWidget {
         '/Signup': (context) => const Signup(),
         '/Dashboard': (context) => const Dashboard(),
         '/Investment': (context) => const InvestmentPage(),
-      //  '/License': (context) => const LicensePage(),
       },
-      home: const Badrul(),
+      home: const InvestmentPage(),
 
       //const Dashboard(value: "value"),
       debugShowCheckedModeBanner: false,

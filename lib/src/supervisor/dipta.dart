@@ -35,7 +35,7 @@ class Dipta extends StatelessWidget {
               Padding(padding: const EdgeInsets.only(left: 20,right: 20),
                 child:const Text(
 
-                  'M U N N I  F A R H A N A  A K T E R\n'
+                  'Lecturer\nComputer Science & Engineering'
                       '',
                   textAlign: TextAlign.justify,
                   style: TextStyle(

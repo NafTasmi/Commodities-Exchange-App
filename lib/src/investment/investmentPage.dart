@@ -21,7 +21,6 @@ class InvestmentPage extends StatelessWidget {
       ),
       body: Center(
         child: SingleChildScrollView(
-       //
         child: Stack(
           alignment: Alignment.topCenter,
         children: [
@@ -120,7 +119,7 @@ class Deposits extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Container(
+                  /*Container(
                     width: 40,
                     height: 40,
                     margin: EdgeInsets.only(right: 15),
@@ -128,8 +127,8 @@ class Deposits extends StatelessWidget {
                       border: Border.all(color: Colors.black,width: 0.2),
                       borderRadius: BorderRadius.all(Radius.circular(10))
                     ),
-                    child: Center(child: Text("+",style: TextStyle(fontWeight: FontWeight.w700),)),
-                  ),
+                    //child: Center(child: Text("+",style: TextStyle(fontWeight: FontWeight.w700),)),
+                  ),*/
                   DepositItem(name: "Fast Invest",detail: "7.5% per month",icon: Icon(Icons.bar_chart,color: Colors.blue,),),
                   DepositItem(name: "daily Invest",detail: "0.5% per month",icon: Icon(Icons.bar_chart,color: Colors.greenAccent,),),
                   DepositItem(name: "monthly Invest",detail: "6.5% per month",icon: Icon(Icons.bar_chart,color: Colors.orangeAccent,),)

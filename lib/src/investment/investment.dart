@@ -57,7 +57,7 @@ class Return extends StatelessWidget {
           SizedBox(
             height: 15,
           ),
-          Graph()
+          Graph(),
         ],
       ),
     );
@@ -76,41 +76,6 @@ class Graph extends StatelessWidget {
           maxY: 12,
           gridData: FlGridData(show: false),
           borderData: FlBorderData(show: false),
-          titlesData: FlTitlesData(
-              //leftTitles: SideTitles(showTitles: false),
-              // bottomTitles: SideTitles(showTitles: true,
-              //   getTextStyles: (value) => TextStyle(color: Color(0xFF008CFF),fontWeight: FontWeight.bold,fontSize: 16),
-              //     getTitles: (value){
-              //       switch(value.toInt()){
-              //         case 1:
-              //           return 'J';
-              //         case 2:
-              //           return 'F';
-              //         case 3:
-              //           return 'M';
-              //         case 4:
-              //           return 'A';
-              //         case 5:
-              //           return 'M';
-              //         case 6:
-              //           return 'J';
-              //         case 7:
-              //           return 'J';
-              //         case 8:
-              //           return 'A';
-              //         case 9:
-              //           return 'S';
-              //         case 10:
-              //           return 'O';
-              //         case 11:
-              //           return 'N';
-              //         case 12:
-              //           return 'D';
-              //       }
-              //       return '';
-              //     }
-              // )
-              ),
           lineBarsData: [
             LineChartBarData(
                 isCurved: true,

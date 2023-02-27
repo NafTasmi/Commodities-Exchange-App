@@ -32,7 +32,7 @@ class LastInvestment extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text("Last investments",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20),),
-              Icon(Icons.arrow_forward_ios,size: 20,color: Colors.grey,)
+              //Icon(Icons.arrow_forward_ios,size: 20,color: Colors.grey,)
             ],
           ),
           Row(

@@ -67,10 +67,10 @@ class CardDesign extends StatelessWidget {
                     "****" + card.number,
                     style: TextStyle(color: Colors.white,fontSize: 18),
                   ),
-                  Image(
+                  /*Image(
                     image: AssetImage(card.image),
                     width: 50,
-                  )
+                  )*/
                 ],
               ),
             )

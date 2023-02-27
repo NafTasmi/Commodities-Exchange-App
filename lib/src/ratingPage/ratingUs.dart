@@ -1,11 +1,3 @@
-/*
-add tf
-make it popup
-if rated the show previous rating
-edit
-not now
- */
-
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -49,11 +41,6 @@ class RatingUs extends StatelessWidget {
               width: 100,
               height: 50,
               //elevated button
-
-
-
-
-
               child: ElevatedButton(
                 onPressed: (){}, // onPressed
                 child: Text('Rate',
